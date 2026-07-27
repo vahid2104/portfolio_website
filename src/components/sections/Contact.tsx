@@ -28,7 +28,7 @@ const WHATSAPP_MESSAGE =
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/vahid-aliyev-front-end-developer/";
 const GITHUB_URL = "https://github.com/vahid2104";
-const CV_URL = "/Vahid-Aliyev_CV.pdf";
+const CV_URL = "/Vahid_Aliyev_CV.pdf";
 
 const revealAnimation = {
   hidden: {
