@@ -62,14 +62,9 @@ export default function Contact() {
     }
   };
 
-  const whatsappUrl =
-    WHATSAPP_NUMBER === "994773616467"
-      ? "#"
-      : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-          WHATSAPP_MESSAGE,
-        )}`;
-
-
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    WHATSAPP_MESSAGE,
+  )}`;
 
   return (
     <section
@@ -201,11 +196,6 @@ export default function Contact() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(event) => {
-                if (WHATSAPP_NUMBER === "994773616467") {
-                  event.preventDefault();
-                }
-              }}
               className="group relative flex min-h-[190px] flex-1 overflow-hidden rounded-[2rem] border border-emerald-400/20 bg-emerald-400/[0.04] p-6 shadow-[0_20px_70px_rgba(16,185,129,0.06)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-300/50 hover:bg-emerald-400/[0.08] sm:p-8"
             >
               <div className="pointer-events-none absolute right-[-50px] top-[-50px] h-44 w-44 rounded-full bg-emerald-400/10 blur-[70px]" />
@@ -245,18 +235,13 @@ export default function Contact() {
                 <div className="w-full">
                   {copied ? (
                     <p className="text-center w-full text-white">Copied!</p>
-                    
                   ) : (
                     <div className="flex flex-col items-center justify-center gap-3 ">
                       <span className="place-items-center rounded-2xl text-lg ">
                         <FiCopy />
                       </span>
 
-                  
-                        <p className="text-xs font-bold ">
-                          Copy Email
-                        </p>
-                      
+                      <p className="text-xs font-bold ">Copy Email</p>
                     </div>
                   )}
                 </div>
