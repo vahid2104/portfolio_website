@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👋 Vahid Aliyev – Portfolio Website
 
-## Getting Started
+> **Frontend Engineer | Full-Stack Developer**
 
-First, run the development server:
+🌐 **Live Portfolio:** https://vahidaliyev.com
+
+Welcome to my personal portfolio website repository.
+
+This project showcases my experience, technical skills, professional background, and selected software engineering projects. The portfolio is designed with a modern UI, responsive layouts, smooth animations, and optimized performance to provide the best experience across all devices.
+
+---
+
+## 🚀 About
+
+This portfolio serves as my central hub for recruiters, engineers, and collaborators to explore my work.
+
+It includes:
+
+- Professional introduction
+- Academic background
+- Work experience
+- Technical skills
+- Featured projects
+- Contact information
+- Downloadable resume
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### Deployment
+
+- Vercel
+
+### Design
+
+- Responsive Design
+- Modern UI/UX
+- Mobile First Approach
+
+---
+
+## ✨ Features
+
+- Fully responsive design
+- Modern and clean interface
+- Smooth scrolling navigation
+- Interactive animations
+- Downloadable resume
+- SEO optimized
+- Open Graph metadata
+- Fast page loading
+- Accessible components
+- Production-ready architecture
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+ ├── app/
+ ├── components/
+ ├── sections/
+ ├── data/
+ └── lib/
+
+public/
+ ├── images/
+ ├── icons/
+ └── Vahid_Aliyev_CV.pdf
+```
+
+---
+
+## 💻 Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/vahid2104/portfolio_website.git
+```
+
+Navigate to the project:
+
+```bash
+cd portfolio_website
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌍 Live Website
 
-## Deploy on Vercel
+👉 **https://vahidaliyev.com**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📫 Contact
+
+**Email**
+
+vahid.aliyev.03@gmail.com
+
+**Portfolio**
+
+https://vahidaliyev.com
+
+**LinkedIn**
+
+https://linkedin.com/in/vahid-aliyev-front-end-developer
+
+**GitHub**
+
+https://github.com/vahid2104
+
+---
+
+## 📄 License
+
+This project is intended for personal portfolio purposes.
+
+Please do not copy or redistribute the design or content without permission.
+
+---
+
+⭐ If you like this project, consider giving it a star!
