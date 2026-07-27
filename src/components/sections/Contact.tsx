@@ -28,7 +28,7 @@ const WHATSAPP_MESSAGE =
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/vahid-aliyev-front-end-developer/";
 const GITHUB_URL = "https://github.com/vahid2104";
-const CV_URL = "/Vahid-Aliyev-CV.pdf";
+const CV_URL = "/Vahid-Aliyev_CV.pdf";
 
 const revealAnimation = {
   hidden: {
@@ -69,13 +69,7 @@ export default function Contact() {
           WHATSAPP_MESSAGE,
         )}`;
 
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-    } catch (error) {
-      console.error("Email could not be copied:", error);
-    }
-  };
+
 
   return (
     <section
