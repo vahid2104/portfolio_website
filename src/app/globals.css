@@ -1,38 +1,233 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — mirror the "Theme" variables in the Figma file      */
+/* ------------------------------------------------------------------ */
+
+:root,
+[data-theme="light"] {
+  --bg: #f7f4ec;
+  --surface: #ffffff;
+  --surface-2: #efeae0;
+  --line: #e2dccf;
+  --fg: #15131f;
+  --muted: #5b5870;
+  --subtle: #8c889c;
+  --accent: #c8f03c;
+  --on-accent: #15131f;
+  --accent-text: #4f7a00;
+  --violet: #6d5cf5;
+  --violet-soft: #ece9ff;
+  --cyan: #0891b2;
+  --coral: #e8603c;
+  --glow-1: rgb(200 240 60 / 0.35);
+  --glow-2: rgb(124 108 255 / 0.22);
+  --glow-3: rgb(56 189 248 / 0.18);
+  --inverse: #15131f;
+  --on-inverse: #f7f4ec;
+  --success: #16a34a;
+  --shadow: 0 1px 2px rgb(21 19 31 / 0.04), 0 14px 44px -14px rgb(70 55 160 / 0.18);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0b16;
+  --surface: #111325;
+  --surface-2: #191c33;
+  --line: #252944;
+  --fg: #eef0fa;
+  --muted: #a4a9c4;
+  --subtle: #6b7090;
+  --accent: #c8f03c;
+  --on-accent: #0a0b16;
+  --accent-text: #c8f03c;
+  --violet: #9d8fff;
+  --violet-soft: #221f48;
+  --cyan: #5ad1f5;
+  --coral: #ff8a65;
+  --glow-1: rgb(200 240 60 / 0.16);
+  --glow-2: rgb(124 108 255 / 0.28);
+  --glow-3: rgb(56 189 248 / 0.16);
+  --inverse: #eef0fa;
+  --on-inverse: #0a0b16;
+  --success: #4ade80;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 24px 60px -24px rgb(0 0 0 / 0.8);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent-text: var(--accent-text);
+  --color-inverse: var(--inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-success: var(--success);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-cyan: var(--cyan);
+  --color-coral: var(--coral);
+
+  --shadow-card: var(--shadow);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-ping-slow: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-blob: blob 18s ease-in-out infinite;
+  --animate-gradient: gradient-x 6s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, 25px) scale(0.95);
+  }
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ping-slow {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  background: var(--bg);
 }
 
 body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #22d3ee;
-  color: #020617;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Subtle grain so flat backgrounds don't feel sterile */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Faint grid used behind hero areas */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Soft colour wash used behind hero areas and highlight cards */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora > span {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  animation: var(--animate-blob);
+}
+
+/* Lime → violet → cyan text, slowly shifting */
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent-text), var(--violet), var(--cyan), var(--accent-text));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-gradient);
+}
+
+/* Theme switch: circular reveal (see ThemeToggle) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

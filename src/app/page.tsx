@@ -1,27 +1,25 @@
+import { About } from "@/components/home/About";
+import { Contact } from "@/components/home/Contact";
+import { Experience } from "@/components/home/Experience";
+import { Hero } from "@/components/home/Hero";
+import { Startup } from "@/components/home/Startup";
+import { Work } from "@/components/home/Work";
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import  About  from "@/components/sections/About";
-import  Projects  from "@/components/sections/Projects";
-import  Contact  from "@/components/sections/Contact";
-import { Hero } from "@/components/sections/Hero.";
-import AcademicJourney from "@/components/sections/AcademicJourney";
-import WorkExperience from "@/components/sections/WorkExperience";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#050816] text-white">
-      <div
-        className="fixed inset-0 -z-50 bg-cover bg-top bg-no-repeat opacity-80"
-        style={{ backgroundImage: "url('/images/bg.png')" }}
-      />
-      <div className="fixed inset-0 -z-40 bg-[#050816]/45" />
-
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <AcademicJourney />
-      <WorkExperience />
-      <Projects />
-      <Contact />
-    </main>
+      <main className="relative overflow-x-clip">
+        <Hero />
+        <Startup />
+        <Work />
+        <Experience />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
