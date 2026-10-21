@@ -6,7 +6,7 @@ export const site = {
   timeZone: "Europe/Warsaw",
   email: "vahid.aliyev.03@gmail.com",
   github: "https://github.com/vahid2104",
-  linkedin: "https://www.linkedin.com/in/vahid-aliyev-front-end-developer/",
+  linkedin: "https://www.linkedin.com/in/vahid-aliyev-dev/",
   whatsapp: `https://wa.me/994773616467?text=${encodeURIComponent(
     "Hello Vahid, I found your portfolio and would like to discuss an opportunity.",
   )}`,

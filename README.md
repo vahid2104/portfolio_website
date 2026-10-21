@@ -142,7 +142,7 @@ https://vahidaliyev.com
 
 **LinkedIn**
 
-https://linkedin.com/in/vahid-aliyev-front-end-developer
+https://www.linkedin.com/in/vahid-aliyev-dev/
 
 **GitHub**
 
